@@ -41,3 +41,15 @@ tasks {
         gradleVersion = "9.7.1"
     }
 }
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "no.jksolbakken"
+            artifactId = "ktor-allowlist-plugin"
+            version = version
+
+            from(components["java"])
+        }
+    }
+}
