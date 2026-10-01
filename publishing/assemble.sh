@@ -2,8 +2,13 @@
 
 group="no/jksolbakken"
 artifact="ktor-allowlist-plugin"
-version="0.1.0"
 dir="../build/bundle/$group/$artifact/$version"
+
+if [[ -n $VERSION ]]; then
+  version=$VERSION
+else
+  version="notimportant"
+fi
 
 rm -rf $dir
 mkdir -p $dir
