@@ -28,6 +28,7 @@ jobs:
             github.com:443
             services.gradle.org:443
             release-assets.githubusercontent.com:443
+            plugins.gradle.org:443
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # ratchet:actions/checkout@v7
         name: Checkout
         with:
