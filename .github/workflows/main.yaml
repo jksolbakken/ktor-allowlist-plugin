@@ -46,6 +46,6 @@ jobs:
         with:
           dependency-graph: generate-and-submit
       - name: Test & build
-        run: ./gradlew test build publishToMavenLocal
+        run: ./gradlew test build kotlinSourcesJar publishToMavenLocal
       - name: Assemble zip for Maven Central
         run: ./publishing/assemble.sh
