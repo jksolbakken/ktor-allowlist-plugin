@@ -52,3 +52,4 @@ jobs:
         env:
           GPG_PRIVATE_KEY_B64: ${{ secrets.GPG_PRIVATE_KEY_B64 }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          GITHUB_WORKSPACE: ${{ github.workspace }}
