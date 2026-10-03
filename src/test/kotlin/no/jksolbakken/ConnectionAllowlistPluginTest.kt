@@ -51,7 +51,6 @@ class ConnectionAllowlistPluginTest {
             testModule(dryRun = true, reportingEndpoint = "http://reporting.example.com")
         }
         val response = client.get("/")
-        println(response.headers)
         assertEquals("""(response-origin); report-to=default""", response.headers["Connection-Allowlist-Report-Only"])
         assertNull(response.headers["Connection-Allowlist"])
         assertEquals("""default="http://reporting.example.com"""", response.headers["Reporting-Endpoints"])
