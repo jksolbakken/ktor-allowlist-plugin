@@ -2,15 +2,15 @@
 
 set -euo pipefail
 
-group="no/jksolbakken"
-artifact="ktor-allowlist-plugin"
-dir="$GITHUB_WORKSPACE/build/bundle/$group/$artifact/$version"
-
 if [[ -n $VERSION ]]; then
   version=$VERSION
 else
   version="notimportant"
 fi
+
+group="no/jksolbakken"
+artifact="ktor-allowlist-plugin"
+dir="$GITHUB_WORKSPACE/build/bundle/$group/$artifact/$version"
 
 rm -rf $dir
 mkdir -p $dir
