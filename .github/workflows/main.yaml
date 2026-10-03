@@ -51,4 +51,4 @@ jobs:
         run: ./publishing/assemble.sh
         env:
           GPG_PRIVATE_KEY_B64: ${ secrets.GPG_PRIVATE_KEY_B64 }
-          GPG_PASSPHRASE: ${ GPG_PASSPHRASE }
+          GPG_PASSPHRASE: ${ secrets.GPG_PASSPHRASE }
