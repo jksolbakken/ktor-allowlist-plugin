@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 group="no/jksolbakken"
 artifact="ktor-allowlist-plugin"
 dir="$GITHUB_WORKSPACE/build/bundle/$group/$artifact/$version"
