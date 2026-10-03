@@ -47,9 +47,16 @@ jobs:
           dependency-graph: generate-and-submit
       - name: Test & build
         run: ./gradlew test build kotlinSourcesJar publishToMavenLocal
+      - name: Import GPG key
+        run: |
+          export GNUPGHOME="$(mktemp -d)"
+          chmod 700 "$GNUPGHOME"
+          printf '%s\n' "$GPG_PRIVATE_KEY" | gpg --batch --import
+          echo "GNUPGHOME=$GNUPGHOME" >> "$GITHUB_ENV"
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
       - name: Assemble zip for Maven Central
         run: ./publishing/assemble.sh
         env:
-          GPG_PRIVATE_KEY_B64: ${{ secrets.GPG_PRIVATE_KEY_B64 }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           GITHUB_WORKSPACE: ${{ github.workspace }}
