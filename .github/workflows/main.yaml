@@ -50,5 +50,5 @@ jobs:
       - name: Assemble zip for Maven Central
         run: ./publishing/assemble.sh
         env:
-          GPG_PRIVATE_KEY_B64: ${ secrets.GPG_PRIVATE_KEY_B64 }
-          GPG_PASSPHRASE: ${ secrets.GPG_PASSPHRASE }
+          GPG_PRIVATE_KEY_B64: ${{ secrets.GPG_PRIVATE_KEY_B64 }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
