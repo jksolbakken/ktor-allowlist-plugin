@@ -2,6 +2,7 @@ package no.jksolbakken
 
 import io.ktor.server.application.createApplicationPlugin
 import io.ktor.server.response.header
+import java.net.URL
 
 val ConnectionAllowlist = createApplicationPlugin(
     name = "ConnectionAllowlist", //
@@ -16,7 +17,7 @@ val ConnectionAllowlist = createApplicationPlugin(
         val otherOrigins = pluginConfig.allowedUrlPatterns.joinToString(" ") {
             """"$it""""
         }.let {
-            if (it.isNotEmpty()) " $it" else ""
+            if (pluginConfig.includeResponseOrigin && it.isNotEmpty()) " $it" else it
         }
 
         val caHeaderValue = buildString {
@@ -38,5 +39,5 @@ class PluginConfiguration {
     var reportOnly: Boolean = false
     var includeResponseOrigin: Boolean = true
     var allowedUrlPatterns: Set<String> = emptySet()
-    var reportTo: String? = null
+    var reportTo: URL? = null
 }
