@@ -47,6 +47,8 @@ jobs:
           dependency-graph: generate-and-submit
       - name: Test & build
         run: ./gradlew test build kotlinSourcesJar publishToMavenLocal
+        env:
+          VERSION: ${{ github.ref_name }}
       - name: Import GPG key
         run: |
           export GNUPGHOME="$(mktemp -d)"
@@ -60,7 +62,7 @@ jobs:
         env:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           GITHUB_WORKSPACE: ${{ github.workspace }}
-          VERSION: ${{ github.ref }}
+          VERSION: ${{ github.ref_name }}
       - name: Upload artifact to Maven Central
         run: |
           auth=$(printf "$MAVEN_CENTRAL_USERNAME:$MAVEN_CENTRAL_PASSWORD" | base64)
