@@ -1,7 +1,7 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
 
 group = "no.jksolbakken"
-version = System.getenv("PROJ_VERSION") ?: "notimportant"
+version = System.getenv("VERSION") ?: "notimportant"
 
 repositories {
     mavenCentral()
