@@ -1,4 +1,4 @@
-name: Build all the things
+name: Build and publish
 
 on:
   release:
@@ -65,6 +65,7 @@ jobs:
           VERSION: ${{ github.ref_name }}
       - name: Upload artifact to Maven Central
         run: |
+          set -eo pipefail
           auth=$(printf "$MAVEN_CENTRAL_USERNAME:$MAVEN_CENTRAL_PASSWORD" | base64)
           curl -X POST \
             -H "Authorization: Bearer $auth" \
