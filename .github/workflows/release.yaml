@@ -66,7 +66,7 @@ jobs:
       - name: Upload artifact to Maven Central
         run: |
           set -eo pipefail
-          export auth=$(printf "$MAVEN_CENTRAL_USERNAME:$MAVEN_CENTRAL_PASSWORD" | base64)
+          auth=$(printf "$MAVEN_CENTRAL_USERNAME:$MAVEN_CENTRAL_PASSWORD" | base64)
           curl -X POST \
             -H "Authorization: Bearer $auth" \
             --form bundle=@$GITHUB_WORKSPACE/build/bundle/mvnbundle.zip \
