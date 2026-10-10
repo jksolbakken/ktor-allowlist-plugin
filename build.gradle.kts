@@ -61,6 +61,7 @@ publishing {
             artifactId = "ktor-allowlist-plugin"
             version = version
             pom {
+                name = "ktor-allowlist-plugin"
                 description = "Connection Allowlist plugin for Ktor"
                 url.set("https://github.com/jksolbakken/ktor-allowlist-plugin")
                 licenses {
