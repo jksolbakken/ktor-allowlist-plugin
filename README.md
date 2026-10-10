@@ -12,3 +12,12 @@ install(ConnectionAllowlist) {
     reportTo = "https://reporting.example.com"
 }
 ```
+
+Parameters:
+
+| Name                    | Description                                               | Default value |
+| ------                  | -----                                                     | -------       |
+| `reportOnly`            | Do not block, just report                                 | false         |
+| `includeResponseOrigin` | Allow connections to the origin where this page is served | true          |
+| `allowedUrlPatterns`    | Additional allowed origins                                | empty         |
+| `reportTo`              | Where to report violations                                | empty         |
