@@ -60,12 +60,14 @@ publishing {
             groupId = "no.jksolbakken"
             artifactId = "ktor-allowlist-plugin"
             version = version
-            description = "Connection Allowlist plugin for Ktor"
             pom {
+                description = "Connection Allowlist plugin for Ktor"
                 url.set("https://github.com/jksolbakken/ktor-allowlist-plugin")
                 licenses {
-                    name = "MIT"
-                    url = "https://en.wikipedia.org/wiki/MIT_License"
+                    license {
+                        name = "MIT"
+                        url = "https://en.wikipedia.org/wiki/MIT_License"
+                    }
                 }
                 developers {
                     developer {
