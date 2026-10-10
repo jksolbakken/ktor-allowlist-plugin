@@ -10,6 +10,7 @@ repositories {
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.maven.publish)
+    alias(libs.plugins.javadoc)
 }
 
 dependencies {
@@ -27,6 +28,12 @@ kotlin {
 }
 
 tasks {
+    register<Jar>("generateJavadocJar") {
+        description = "A Javadoc JAR containing Dokka Javadoc"
+        from(dokkaGeneratePublicationJavadoc.flatMap { it.outputDirectory })
+        archiveClassifier.set("javadoc")
+    }
+
     withType<Test> {
         useJUnitPlatform()
         testLogging {
@@ -40,6 +47,11 @@ tasks {
     withType<Wrapper> {
         gradleVersion = "9.8.0"
     }
+
+    withType<Javadoc> {
+        destinationDir = file("${layout.buildDirectory.get()}/docs/javadoc")
+        include("no/jksolbakken/*")
+    }
 }
 
 publishing {
@@ -48,8 +60,25 @@ publishing {
             groupId = "no.jksolbakken"
             artifactId = "ktor-allowlist-plugin"
             version = version
+            description = "Connection Allowlist plugin for Ktor"
+            pom {
+                url.set("https://github.com/jksolbakken/ktor-allowlist-plugin")
+                licenses {
+                    name = "MIT"
+                    url = "https://en.wikipedia.org/wiki/MIT_License"
+                }
+                developers {
+                    developer {
+                        id.set("jksolbakken")
+                    }
+                }
+                scm {
+                    url.set("https://github.com/jksolbakken/ktor-allowlist-plugin")
+                }
+            }
 
             from(components["java"])
         }
     }
 }
+

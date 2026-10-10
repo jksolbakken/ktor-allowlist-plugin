@@ -4,6 +4,9 @@ import io.ktor.server.application.createApplicationPlugin
 import io.ktor.server.response.header
 import java.net.URL
 
+/*
+ * Plugin for adding Connection Allowlist headers in Ktor
+ */
 val ConnectionAllowlist = createApplicationPlugin(
     name = "ConnectionAllowlist", //
     createConfiguration = ::PluginConfiguration

@@ -46,7 +46,7 @@ jobs:
         with:
           dependency-graph: generate-and-submit
       - name: Test & build
-        run: ./gradlew test build kotlinSourcesJar publishToMavenLocal
+        run: ./gradlew test build kotlinSourcesJar generateJavadocJar publishToMavenLocal
         env:
           VERSION: ${{ github.ref_name }}
       - name: Import GPG key
