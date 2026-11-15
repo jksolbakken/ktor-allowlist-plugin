@@ -1,5 +1,4 @@
 [tools]
-goreleaser = "latest"
 gradle = "9.8.2"
 java = "temurin-25"
 kotlin = { version = "latest", asset_pattern = "kotlin-compiler-*.zip", bin_path = "kotlinc/bin" }
