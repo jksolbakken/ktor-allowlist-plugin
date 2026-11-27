@@ -4,7 +4,7 @@
 version: 'v0.0.3'
 workflows:
     '.github/workflows/automerge-dependabot.yaml':
-        - 'navikt/automerge-dependabot@v1.7.0'
+        - 'navikt/automerge-dependabot@v1.8.0'
     '.github/workflows/ci.yaml':
         - 'actions/checkout@v7.0.1'
         - 'actions/setup-java@v6.2.0'
@@ -31,9 +31,9 @@ dependencies:
         commit: 'sha1-8da46b539cd8fe6ab27ca75128919a18d757604c'
         owner_id: 124156
         repo_id: 743626948
-    'navikt/automerge-dependabot@v1.7.0':
-        ref: 'v1.7.0'
-        commit: 'sha1-2c57e8fdb262ad558901e1242c89b19346e3a7a1'
+    'navikt/automerge-dependabot@v1.8.0':
+        ref: 'v1.8.0'
+        commit: 'sha1-69852d2204654904759e85f88f4a45bbf8854905'
         owner_id: 11848947
         repo_id: 982732266
     'step-security/harden-runner@v2.22.4':
