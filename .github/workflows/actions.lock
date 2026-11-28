@@ -9,12 +9,12 @@ workflows:
         - 'actions/checkout@v7.0.1'
         - 'actions/setup-java@v6.2.0'
         - 'gradle/actions@v6.4.1'
-        - 'step-security/harden-runner@v2.22.4'
+        - 'step-security/harden-runner@v2.23.0'
     '.github/workflows/release.yaml':
         - 'actions/checkout@v7.0.1'
         - 'actions/setup-java@v6.2.0'
         - 'gradle/actions@v6.4.1'
-        - 'step-security/harden-runner@v2.22.4'
+        - 'step-security/harden-runner@v2.23.0'
 dependencies:
     'actions/checkout@v7.0.1':
         ref: 'v7.0.1'
@@ -36,8 +36,8 @@ dependencies:
         commit: 'sha1-69852d2204654904759e85f88f4a45bbf8854905'
         owner_id: 11848947
         repo_id: 982732266
-    'step-security/harden-runner@v2.22.4':
-        ref: 'v2.22.4'
-        commit: 'sha1-1d88384fd173af6ecb012dfd0264a306b711241a'
+    'step-security/harden-runner@v2.23.0':
+        ref: 'v2.23.0'
+        commit: 'sha1-aebdcf6156ab6691adf63218240e476564a1ed4c'
         owner_id: 88700172
         repo_id: 422287306
